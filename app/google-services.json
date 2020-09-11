@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "202281983869",
+    "firebase_url": "https://helloworld-94b6e.firebaseio.com",
+    "project_id": "helloworld-94b6e",
+    "storage_bucket": "helloworld-94b6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202281983869:android:745572452f16750f233614",
+        "android_client_info": {
+          "package_name": "com.example.codeflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202281983869-dc6tq9tspgs0abvtkaji21m5n7qghh6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTeWfBYIUCjZDcBsekA8r6M_6hETYVlTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202281983869-dc6tq9tspgs0abvtkaji21m5n7qghh6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
