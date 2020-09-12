@@ -138,8 +138,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void launchMainActivity(FirebaseUser user) {
         if (user != null) {
-            Intent mainIntent = new Intent(LoginActivity.this, tempScreen.class);
-            mainIntent.putExtra("USER_ID", user.getDisplayName());
+            Intent mainIntent = new Intent(LoginActivity.this, mindmappage1.class);
+        //    mainIntent.putExtra("USER_ID", user.getDisplayName());
             LoginActivity.this.startActivity(mainIntent);
             LoginActivity.this.finish();
         }

@@ -22,6 +22,8 @@ public class mindmappage1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mindmappage1);
+
+        floatingActionButton=findViewById(R.id.floating);
         floatingActionButton.bringToFront();
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,7 @@ public class mindmappage1 extends AppCompatActivity {
                             Toast.makeText(mindmappage1.this, "Enter data", Toast.LENGTH_SHORT).show();
                         }
                         else{
+                            Toast.makeText(mindmappage1.this, "File created", Toast.LENGTH_SHORT).show();
                             bottomSheetDialog.dismiss();
                         }
                     }
@@ -50,6 +53,7 @@ public class mindmappage1 extends AppCompatActivity {
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Toast.makeText(mindmappage1.this, "Cancel", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
 
                     }
