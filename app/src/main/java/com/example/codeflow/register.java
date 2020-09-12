@@ -1,7 +1,5 @@
 package com.example.codeflow;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,6 +11,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
@@ -84,10 +84,6 @@ public class register extends AppCompatActivity {
                 String s=email.getText().toString();
                 String password=confirmpass.getText().toString();
                 String uset=username.getText().toString();
-
-
-
-
             }
         });
 
