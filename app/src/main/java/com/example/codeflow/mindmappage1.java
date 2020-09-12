@@ -54,7 +54,6 @@ public class mindmappage1 extends AppCompatActivity {
                     public void onClick(View v) {
                         Toast.makeText(mindmappage1.this, "Cancel", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
-
                     }
                 });
 

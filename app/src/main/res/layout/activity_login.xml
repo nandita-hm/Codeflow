@@ -67,7 +67,7 @@
         android:layout_marginEnd="128dp"
         android:layout_marginBottom="234dp"
         android:clickable="true"
-        android:onClick="onClickRegister"
+
         android:text="New User? Register Here."
         android:textColor="#BDBCBC"
         android:textStyle="bold|italic"
