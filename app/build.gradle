@@ -5,7 +5,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 android {
     signingConfigs {
         release {
-            storeFile file('C:\\Users\\Pi\\keystore_codeflow.jks')
+//            storeFile file('C:\\Users\\Pi\\keystore_codeflow.jks')
             storePassword 'codeflow2020'
             keyAlias 'key0'
             keyPassword 'codeflow'

@@ -2,8 +2,12 @@ package com.example.codeflow;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int RC_SIGN_IN = 1001;
@@ -34,7 +39,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        final EditText uname=findViewById(R.id.username);
+        final EditText upass=findViewById(R.id.Password);
+        Button login=findViewById(R.id.loginbtn);
+        TextView reg=findViewById(R.id.newuser);
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -45,7 +53,52 @@ public class LoginActivity extends AppCompatActivity {
 
         // Configure Google Client
         configureGoogleClient();
+
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), register.class));
+            }
+        });
+
+        //IF NORMAL LOGIN METHOD IS USED
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String usname= uname.getText().toString().trim();
+                String uspass= upass.getText().toString().trim();
+
+                if(TextUtils.isEmpty(usname))
+                {
+                    uname.setError("Username is Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(uspass))
+                {
+                    upass.setError("Password is Required");
+                    return;
+                }
+
+                //Authenticate the user
+                firebaseAuth.signInWithEmailAndPassword(usname,uspass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful())
+                        {
+                            Toast.makeText(getApplicationContext(), "Logged In", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), page1.class));
+                        }
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(), "Error Logging in", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
     }
+
 
     private void configureGoogleClient() {
         // Configure Google Sign In
@@ -96,6 +149,7 @@ public class LoginActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 showToastMessage("Google Sign in Succeeded");
+                assert account != null;
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
@@ -117,6 +171,7 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = firebaseAuth.getCurrentUser();
 
+                            assert user != null;
                             Log.d(TAG, "signInWithCredential:success: currentUser: " + user.getEmail());
 
                             showToastMessage("Firebase Authentication Succeeded ");
@@ -139,7 +194,7 @@ public class LoginActivity extends AppCompatActivity {
     private void launchMainActivity(FirebaseUser user) {
         if (user != null) {
             Intent mainIntent = new Intent(LoginActivity.this, page1.class);
-        //    mainIntent.putExtra("USER_ID", user.getDisplayName());
+            mainIntent.putExtra("USER_ID", user.getDisplayName());
             LoginActivity.this.startActivity(mainIntent);
             LoginActivity.this.finish();
         }
