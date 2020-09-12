@@ -83,7 +83,7 @@ public class register extends AppCompatActivity {
 
                 String s=email.getText().toString();
                 String password=confirmpass.getText().toString();
-                String uset=username.getText().toString();
+                String user=username.getText().toString();
             }
         });
 
