@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,13 +34,15 @@ public class LoginActivity extends AppCompatActivity {
     GoogleSignInClient googleSignInClient;
 
     private FirebaseAuth firebaseAuth;
-    EditText uname=findViewById(R.id.username);
-    final EditText upass=findViewById(R.id.Password);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        final EditText uname=findViewById(R.id.username);
+        final EditText upass=findViewById(R.id.Password);
         Button login=findViewById(R.id.loginbtn);
+        TextView reg=findViewById(R.id.newuser);
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -51,6 +54,12 @@ public class LoginActivity extends AppCompatActivity {
         // Configure Google Client
         configureGoogleClient();
 
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), register.class));
+            }
+        });
 
         //IF NORMAL LOGIN METHOD IS USED
 
@@ -88,11 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
-
-
-
     }
-
 
 
     private void configureGoogleClient() {
@@ -100,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 // for the requestIdToken, this is in the values.xml file that
                 // is generated from your google-services.json
-                //.requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
