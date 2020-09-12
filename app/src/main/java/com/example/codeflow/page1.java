@@ -25,7 +25,7 @@ public class page1 extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(page1.this, " in fab", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(page1.this, " in fab", Toast.LENGTH_SHORT).show();
                 final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(page1.this);
                 View BottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.addfolder, null);
                 bottomSheetDialog.setContentView(BottomSheetView);
