@@ -22,7 +22,6 @@ public class mindmappage1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mindmappage1);
-
         floatingActionButton=findViewById(R.id.floating);
         floatingActionButton.bringToFront();
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
