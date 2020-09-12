@@ -23,6 +23,7 @@ public class page2 extends AppCompatActivity {
     WebView webView;
     private FirebaseAuth firebaseAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
