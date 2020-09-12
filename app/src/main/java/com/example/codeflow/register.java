@@ -29,7 +29,7 @@ public class register extends AppCompatActivity {
 
 
 
-        final EditText dob=(EditText)findViewById(R.id.dob);
+        final EditText dob= findViewById(R.id.dob);
         dob.setOnClickListener(new View.OnClickListener() {
 
 
@@ -56,8 +56,8 @@ public class register extends AppCompatActivity {
                 dob.setText(date);
             }
         };
-        final EditText confirmpass=(EditText)findViewById(R.id.confirmpassword);
-        final EditText password=(EditText)findViewById(R.id.passwordr);
+        final EditText confirmpass= findViewById(R.id.confirmpassword);
+        final EditText password= findViewById(R.id.passwordr);
 
         confirmpass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,9 +74,9 @@ public class register extends AppCompatActivity {
 
             }
         });
-        Button reg=(Button)findViewById(R.id.register);
-        final EditText username=(EditText)findViewById(R.id.username);
-        final EditText email=(EditText)findViewById(R.id.email);
+        Button reg= findViewById(R.id.register);
+        final EditText username= findViewById(R.id.username);
+        final EditText email= findViewById(R.id.email);
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
