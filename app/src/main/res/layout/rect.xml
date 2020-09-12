@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/logingradient"
+    android:background="@drawable/tbgradient"
     android:elevation="4dp">
 
 </androidx.appcompat.widget.Toolbar>

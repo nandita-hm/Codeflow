@@ -13,7 +13,7 @@
      layout="@layout/rect"
      android:layout_width="413dp"
      android:layout_height="wrap_content"
-     android:background="@drawable/logingradient"
+     android:background="@drawable/tbgradient"
      android:isScrollContainer="true"
      android:minHeight="?attr/actionBarSize"
      app:layout_constraintBottom_toBottomOf="parent"
