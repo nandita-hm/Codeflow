@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/logingradient">
 
+    android:id="@+id/cl"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0232222">
+
+    <EditText
+        android:id="@+id/team_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Team Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#BCBDBD" />
+    <EditText
+        android:id="@+id/file_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="File Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#BCBDBD" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageButton
+            android:id="@+id/cancel_button"
+            android:layout_width="176dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="1dp"
+            android:background="@drawable/roundbuttonsfortodolist"
+            android:src="@drawable/ic_baseline_cancel_24"
+            android:textColor="#fff" />
+
+        <ImageButton
+            android:id="@+id/send"
+            android:layout_width="228dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/roundbuttonsfortodolist"
+            android:src="@android:drawable/ic_menu_send" />
+    </LinearLayout>
 </LinearLayout>

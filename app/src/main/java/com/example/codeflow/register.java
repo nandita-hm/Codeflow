@@ -89,7 +89,7 @@ public class register extends AppCompatActivity {
 
 
     }
-    public void onClickBack(){
+    public void onClickBack(View view){
         Intent back= new Intent(register.this,LoginActivity.class);
         startActivity(back);
     }

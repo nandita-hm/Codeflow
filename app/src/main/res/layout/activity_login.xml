@@ -43,20 +43,20 @@
     <EditText
         android:id="@+id/username"
         android:layout_width="350dp"
-        android:layout_height="43dp"
+        android:layout_height="40dp"
         android:layout_marginStart="31dp"
         android:layout_marginTop="254dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginBottom="437dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         android:textColorHint="#BDBCBC"
-        app:layout_constraintBottom_toTopOf="@+id/Password"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/newuser"
@@ -66,10 +66,10 @@
         android:layout_marginTop="478dp"
         android:layout_marginEnd="128dp"
         android:layout_marginBottom="234dp"
-        android:text="New User? Register Here."
-        android:textColor="#BDBCBC"
         android:clickable="true"
         android:onClick="onClickRegister"
+        android:text="New User? Register Here."
+        android:textColor="#BDBCBC"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,17 +96,18 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
-        android:layout_marginEnd="187dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginBottom="588dp"
         android:text="Log In"
+
+        android:textColor="#BCBDBD"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/username"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
