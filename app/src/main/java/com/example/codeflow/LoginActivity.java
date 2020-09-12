@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful())
                         {
                             Toast.makeText(getApplicationContext(), "Logged In", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), page1.class));
+                            startActivity(new Intent(getApplicationContext(), page2.class));
                         }
                         else
                         {

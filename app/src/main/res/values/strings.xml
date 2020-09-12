@@ -2,4 +2,5 @@
     <string name="app_name">Codeflow</string>
     <string name="server_client_id">202281983869-df64dsbonc738htqd5jrphpmmul9uafc.apps.googleusercontent.com</string>
     <string name="web_client_id">202281983869-df64dsbonc738htqd5jrphpmmul9uafc.apps.googleusercontent.com</string>
+    <string name="new_user_register_here">New User?  <u>Register Here.</u></string>
 </resources>
