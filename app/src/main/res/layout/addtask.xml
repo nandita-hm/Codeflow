@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/logingradient">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cl"
     android:orientation="vertical"
     android:padding="16dp"
@@ -12,40 +10,38 @@
     android:background="#F0232222">
 
     <EditText
-        android:id="@+id/team_name"
+        android:id="@+id/task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Team Name"
+        android:hint="Task Name"
         android:inputType="textPersonName"
-        android:textColorHint="#BCBDBD" />
-    <EditText
-        android:id="@+id/file_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="File Name"
-        android:inputType="textPersonName"
-        android:textColorHint="#BCBDBD" />
+        android:textColorHint="#D65C3E" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
-        <ImageButton
-            android:id="@+id/cancelbtn"
-            android:layout_width="185dp"
-            android:layout_height="52dp"
-            android:layout_marginLeft="1dp"
+        <Button
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/roundbuttonsfortodolist"
-            android:src="@drawable/ic_baseline_cancel_24"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:text="Time" />
+
+        <Button
+            android:id="@+id/today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/roundbuttonsfortodolist"
+            android:textColor="#fff"
+            android:text="Today" />
 
         <ImageButton
             android:id="@+id/send"
-            android:layout_width="219dp"
-            android:layout_height="52dp"
+            android:layout_width="82dp"
+            android:layout_height="46dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:background="@drawable/roundbuttonsfortodolist"
