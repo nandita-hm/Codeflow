@@ -6,22 +6,30 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class page2 extends AppCompatActivity {
+public class page2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
     GoogleApiClient mGoogleApiClient;
     Toolbar toolbar;
     WebView webView;
     private FirebaseAuth firebaseAuth;
+    DrawerLayout drawerLayout;
+    //Toolbar toolbar;
+    NavigationView navigationView;
 
 
     @Override
@@ -32,8 +40,20 @@ public class page2 extends AppCompatActivity {
         webView.loadUrl("https://www.google.com/");
         toolbar = findViewById(R.id.tb);
         toolbar.setTitle("Notice me, Senpai!");
+        drawerLayout=findViewById(R.id.drawer_layout);
+      //  navigationView.setCheckedItem(R.id.create);
+      //  navigationView.bringToFront();
+
+
+        ActionBarDrawerToggle actionBarDrawerToggle= new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
 
         toolbar.inflateMenu(R.menu.menu);
+     //   navigationView.setCheckedItem(R.id.create);
+
+        //  navigationView.setCheckedItem(R.id.create);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
 
             @Override
@@ -80,6 +100,39 @@ public class page2 extends AppCompatActivity {
                     }
                 });
     }
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.create:
+//                Intent tom=new Intent(this,tomorrow.class);
+//                startActivity(tom);
+                break;
+            case R.id.logout1:
+//                Intent upcoming=new Intent(this,upcoming.class);
+//                startActivity(upcoming);
+                break;
+            case R.id.help:
+//                Intent upcoming=new Intent(this,upcoming.class);
+//                startActivity(upcoming);
+                break;
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+
+        return true;
+    }
+
 }
 
 

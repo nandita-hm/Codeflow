@@ -1,33 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
- <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/mind_mapping_view"
-        android:background="#fff"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-     android:id="@+id/tb"
-     layout="@layout/rect"
-     android:layout_width="413dp"
-     android:layout_height="wrap_content"
-     android:background="@drawable/tbgradient"
-     android:isScrollContainer="true"
-     android:minHeight="?attr/actionBarSize"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintVertical_bias="0.008"
-     app:titleTextColor="#F3EFF3"/>
-  <WebView
-      android:id="@+id/webview"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_below="@+id/tb" />
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".page2"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/tbgradient"
+    tools:openDrawer="start"
+    >
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/todolist_header"
+        app:menu="@menu/todolistmenu"
+        android:layout_gravity="start"/>
 
 
-</RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb"
+                layout="@layout/rect"
+                android:layout_width="413dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:background="@drawable/tbgradient"
+                android:isScrollContainer="false"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.008"
+                app:titleTextColor="#BCBDBD"
+                app:navigationIcon="@drawable/ic_baseline_menu1_24"
+                 />
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/webview"
+                android:layout_below="@+id/tb"/>
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
