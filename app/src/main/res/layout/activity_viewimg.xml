@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".viewimg">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"/>
+
+    <ImageView
+        android:id="@+id/imgv"
+        android:layout_width="match_parent"
+        android:layout_height="304dp"
+        android:foregroundGravity="center"
+        android:background="@drawable/rounded_corners"
+        android:layout_below="@+id/toolbar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/team_name"
+        android:layout_height="80dp"
+        android:layout_below="@+id/imgv"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_corner_with_gradient"
+        android:textColor="#ffff"
+        android:textStyle="bold||italic"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="259dp" />
+
+</RelativeLayout>
