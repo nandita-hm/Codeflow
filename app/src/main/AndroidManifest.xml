@@ -15,7 +15,10 @@
         <activity android:name=".page1" />
         <activity android:name=".register" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".Intro"/>
+        <activity android:name=".Intro_help"/>
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

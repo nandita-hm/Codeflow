@@ -123,8 +123,8 @@ public class page2 extends AppCompatActivity implements NavigationView.OnNavigat
                startActivity(tom);
                 break;
             case R.id.help:
-//                Intent upcoming=new Intent(this,upcoming.class);
-//                startActivity(upcoming);
+                Intent upcoming=new Intent(this,Intro_help.class);
+                startActivity(upcoming);
                 break;
 
         }
