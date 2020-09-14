@@ -20,13 +20,13 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:id="@+id/team_name"
+        android:id="@+id/tee"
         android:layout_height="80dp"
         android:layout_below="@+id/imgv"
         android:layout_alignParentBottom="true"
         android:background="@drawable/rounded_corner_with_gradient"
         android:textColor="#ffff"
-        android:textStyle="bold||italic"
+        android:textStyle="bold"
         android:layout_marginTop="72dp"
         android:layout_marginBottom="259dp" />
 

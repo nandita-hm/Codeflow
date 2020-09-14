@@ -41,9 +41,10 @@ public class page2 extends AppCompatActivity implements NavigationView.OnNavigat
         toolbar = findViewById(R.id.tb);
         toolbar.setTitle("Notice me, Senpai!");
         drawerLayout=findViewById(R.id.drawer_layout);
-      //  navigationView.setCheckedItem(R.id.create);
+        navigationView=findViewById(R.id.nav_view);
+       navigationView.setCheckedItem(R.id.create);
       //  navigationView.bringToFront();
-
+        navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle actionBarDrawerToggle= new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -114,12 +115,12 @@ public class page2 extends AppCompatActivity implements NavigationView.OnNavigat
         switch (item.getItemId()){
 
             case R.id.create:
-//                Intent tom=new Intent(this,tomorrow.class);
-//                startActivity(tom);
+
                 break;
             case R.id.logout1:
-//                Intent upcoming=new Intent(this,upcoming.class);
-//                startActivity(upcoming);
+                Toast.makeText(this, "selected", Toast.LENGTH_SHORT).show();
+                Intent tom=new Intent(this,viewimg.class);
+               startActivity(tom);
                 break;
             case R.id.help:
 //                Intent upcoming=new Intent(this,upcoming.class);
