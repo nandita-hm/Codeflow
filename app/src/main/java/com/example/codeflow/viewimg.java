@@ -55,7 +55,7 @@ public class viewimg extends AppCompatActivity {
         tn = findViewById(R.id.tee);
         tn.setText("TeamName:");
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReferenceFromUrl("gs://helloworld-94b6e.appspot.com").child("IMG20190226183808.jpg");
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://helloworld-94b6e.appspot.com").child("image1.jpg");
         try {
             final File localFile = File.createTempFile("images", "jpg");
             storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
@@ -132,7 +132,7 @@ public class viewimg extends AppCompatActivity {
         Bitmap bitmap=((BitmapDrawable)drawable).getBitmap();
 
         try {
-            File file = new File(getApplicationContext().getExternalCacheDir(), File.separator +"FILE KA NAAM");
+            File file = new File(getApplicationContext().getExternalCacheDir(), File.separator +"IMG20190226183808.jpg");
             FileOutputStream fOut = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
             fOut.flush();
