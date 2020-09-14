@@ -3,6 +3,7 @@ package com.example.codeflow;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.FileProvider;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -22,13 +23,18 @@ import com.google.firebase.storage.StorageReference;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class viewimg extends AppCompatActivity {
@@ -77,7 +83,7 @@ public class viewimg extends AppCompatActivity {
                         // addSomething();
                         return true;
                     case R.id.download:
-                        // startSettings();
+                        onExportClick();
                         return true;
                     case R.id.logout:
                         signOut();
@@ -118,5 +124,33 @@ public class viewimg extends AppCompatActivity {
                 .build();
         mGoogleApiClient.connect();
         super.onStart();
+    }
+    public void onExportClick()
+    {
+    //share ka code
+        Drawable drawable=imgv.getDrawable();
+        Bitmap bitmap=((BitmapDrawable)drawable).getBitmap();
+
+        try {
+            File file = new File(getApplicationContext().getExternalCacheDir(), File.separator +"FILE KA NAAM");
+            FileOutputStream fOut = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
+            fOut.flush();
+            fOut.close();
+            file.setReadable(true, false);
+            final Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            Uri photoURI = FileProvider.getUriForFile(getApplicationContext(), BuildConfig.APPLICATION_ID +".provider", file);
+
+            intent.putExtra(Intent.EXTRA_STREAM, photoURI);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setType("image/*");
+
+            startActivity(Intent.createChooser(intent, "Share image via"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
