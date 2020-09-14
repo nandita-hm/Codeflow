@@ -10,14 +10,7 @@
     android:background="@drawable/tbgradient"
     tools:openDrawer="start"
     >
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_view"
-        app:headerLayout="@layout/todolist_header"
-        app:menu="@menu/todolistmenu"
-        android:clickable="true"
-        android:layout_gravity="start"/>
+
 
 
         <RelativeLayout
@@ -54,7 +47,16 @@
 
 
 
+
         </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/todolist_header"
+        app:menu="@menu/todolistmenu"
+        android:clickable="true"
+        android:layout_gravity="start"/>
 
 
 

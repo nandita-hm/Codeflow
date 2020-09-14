@@ -6,22 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".viewimg">
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbar"/>
+
+        android:id="@+id/toolbar"
+        layout="@layout/rect"
+        android:layout_width="413dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/tbgradient"
+        android:isScrollContainer="false"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008"
+        app:titleTextColor="#BCBDBD"
+       />
 
     <ImageView
         android:id="@+id/imgv"
         android:layout_width="match_parent"
         android:layout_height="304dp"
         android:foregroundGravity="center"
-        android:background="@drawable/rounded_corners"
+
         android:layout_below="@+id/toolbar"/>
 
     <TextView
         android:layout_width="match_parent"
         android:id="@+id/tee"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/imgv"
         android:layout_alignParentBottom="true"
         android:background="@drawable/rounded_corner_with_gradient"
