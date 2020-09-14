@@ -55,25 +55,25 @@ public class page2 extends AppCompatActivity implements NavigationView.OnNavigat
      //   navigationView.setCheckedItem(R.id.create);
 
         //  navigationView.setCheckedItem(R.id.create);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        //toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
 
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.delete:
+           // @Override
+           // public boolean onMenuItemClick(MenuItem item) {
+          //      switch (item.getItemId()) {
+           //         case R.id.delete:
                         // addSomething();
-                        return true;
-                    case R.id.download:
-                        // startSettings();
-                        return true;
-                    case R.id.logout:
-                        signOut();
+             //           return true;
+             //       case R.id.download:
+                        //something
+              //          return true;
+              //      case R.id.logout:
+               //         signOut();
 
-                    default:
-                        return false;
-                }
-            }
-        });
+                 //   default:
+                  //      return false;
+               // }
+           // }
+       // });
     }
     @Override
     protected void onStart() {
@@ -109,6 +109,12 @@ public class page2 extends AppCompatActivity implements NavigationView.OnNavigat
             super.onBackPressed();
         }
     }
+
+
+
+
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
